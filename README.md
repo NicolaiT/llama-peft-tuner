@@ -1,7 +1,11 @@
 # Tune LLaMa-7B on Alpaca Dataset using PEFT / LORA
 
+Based on @zphang's [minimal-llama](https://github.com/zphang/minimal-llama) scripts. 
+
 References:
   - https://github.com/zphang/minimal-llama/#peft-fine-tuning-with-8-bit
+  - https://github.com/tloen/alpaca-lora
+  - https://github.com/tatsu-lab/stanford_alpaca
 
 Prereqs
 
@@ -43,7 +47,7 @@ python finetune_peft.py `
     --lora_rank 8 `
     --per_device_train_batch_size 2 `
     --gradient_accumulation_steps 1 `
-    --max_steps 250 `
+    --max_steps 2500 `
     --learning_rate 2e-4 `
     --fp16 `
     --logging_steps 10 `
