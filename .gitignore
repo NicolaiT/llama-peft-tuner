@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+repositories/*
+!repositories/.gitkeep
+
+models/*
+!models/.gitkeep
+
+alpaca_text_tokenized

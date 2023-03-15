@@ -45,7 +45,8 @@ def get_peft_config(peft_args: PEFTArguments):
         peft_config = LoraConfig(
             task_type=TaskType.CAUSAL_LM, inference_mode=False,
             r=peft_args.lora_rank,
-            lora_alpha=32, lora_dropout=0.1
+            lora_alpha=32, lora_dropout=0.1,
+            target_modules=['q_proj', 'v_proj']
         )
     elif peft_args.peft_mode == "prefix":
         peft_config = PrefixTuningConfig(
@@ -113,7 +114,7 @@ def main():
     dataset = datasets.load_from_disk(finetune_args.dataset_path)
 
     print("Setup Model")
-    model = transformers.LLaMAForCausalLM.from_pretrained(
+    model = transformers.LlamaForCausalLM.from_pretrained(
         finetune_args.model_path,
         load_in_8bit=True,
         device_map='auto',
