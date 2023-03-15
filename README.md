@@ -47,7 +47,13 @@ python finetune_peft.py `
     --learning_rate 2e-4 `
     --fp16 `
     --logging_steps 10 `
-    --output_dir models/alpaca-7b-llama-peft
+    --output_dir models/alpaca-llama-7b-peft
 ```
 
+Change the steps to 2500 for full training. Play around with steps and batch size to see how it affects the results.
+
+Generate:
+```
+python fgenerate.py
+```
 
