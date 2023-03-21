@@ -28,6 +28,6 @@ with torch.no_grad():
     out = model.generate(
         input_ids=batch["input_ids"],
         attention_mask=torch.ones_like(batch["input_ids"]),
-        max_length=128,
+        max_length=256,
     )
 print(tokenizer.decode(out[0]))

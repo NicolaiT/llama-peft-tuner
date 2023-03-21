@@ -25,32 +25,30 @@ cd "$(python -c 'import site; print(site.getsitepackages()[1])')/bitsandbytes"
 curl -LOJ https://github.com/james-things/bitsandbytes-prebuilt-all_arch/raw/main/0.37.0/libbitsandbytes_cudaall.dll
 ```
 
-If on linux, replace the backticks with backslashes in the following commands.
-
 Tokenize the dataset:
 
 ```
-python tokenize_dataset.py `
-  --tokenizer_path models/llama-7b-hf `
-  --jsonl_path alpaca_text.jsonl `
-  --save_path alpaca_text_tokenized `
+python tokenize_dataset.py \
+  --tokenizer_path models/llama-7b-hf \
+  --jsonl_path alpaca_text.jsonl \
+  --save_path alpaca_text_tokenized \
   --max_seq_length 512
 ```
 
 Run the finetuning script:
 
 ```
-python finetune_peft.py `
-    --model_path models/llama-7b-hf `
-    --dataset_path alpaca_text_tokenized `
-    --peft_mode lora `
-    --lora_rank 8 `
-    --per_device_train_batch_size 2 `
-    --gradient_accumulation_steps 1 `
-    --max_steps 2500 `
-    --learning_rate 2e-4 `
-    --fp16 `
-    --logging_steps 10 `
+python finetune_peft.py \
+    --model_path models/llama-7b-hf \
+    --dataset_path alpaca_text_tokenized \
+    --peft_mode lora \
+    --lora_rank 8 \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 1 \
+    --max_steps 2500 \
+    --learning_rate 2e-4 \
+    --fp16 \
+    --logging_steps 10 \
     --output_dir models/alpaca-llama-7b-peft
 ```
 
