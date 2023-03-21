@@ -17,10 +17,11 @@ tokenizer = transformers.LlamaTokenizer.from_pretrained(model_path)
 batch = tokenizer("""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
 ### Instruction:
-Write a poem about the following topic
+I want to teach on week 22 and 26. This is for lectures. As for the examinations, I would like to have them between 15 and 19. There will be 22 students for both activities.
+There will also be two lab sessions on week 25, 26 and 27 of 11 students. 
 
 ### Input:
-Cheese
+
 
 ### Response:""", return_tensors="pt")
 
@@ -28,6 +29,6 @@ with torch.no_grad():
     out = model.generate(
         input_ids=batch["input_ids"],
         attention_mask=torch.ones_like(batch["input_ids"]),
-        max_length=256,
+        max_length=512,
     )
 print(tokenizer.decode(out[0]))
