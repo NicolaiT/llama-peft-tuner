@@ -2498,8 +2498,7 @@
         "instruction": "\"For the lecture, we should arrange a session of 8 hours on weeks 4-6, 9-11, 16-18, and 44 in one of the preferred rooms U56, U43, U132, or sun_b\u00f8rnefitness. The session should have side hung canvas equipment. For the laboratory, we should arrange a session of 2 hours on weeks 8-9 in one of the preferred rooms U82 or U143. The session should have 4 blackboards equipment. The laboratory must come before the lecture.\"",
         "input": "",
         "output": "[{'week': [4, 5, 6, 9, 10, 11, 16, 17, 18, 44], 'study_activity': 'Lecture', 'no_students': 180, 'duration': 8, 'priority': 2, 'pref_rooms': ['U56', 'U43', 'U132', 'sun_b\u00f8rnefitness'], 'equipment': ['Side hung canvas']}, {'week': [8, 9], 'study_activity': 'Laboratory', 'no_students': 90, 'duration': 2, 'priority': 1, 'pref_rooms': ['U82', 'U143'], 'equipment': ['4 Blackboards']}]"
-    }
-][
+    },
     {
         "instruction": "\"Organize a laboratory session for 60 students that is scheduled for 2 hours during the weeks 15-18, exclusively in room U28. Make sure to provide necessary equipment including 2 blackboards, 2 projectors, a 47-inch flat screen with speakers, and an 80-inch flat screen.\"",
         "input": "",
